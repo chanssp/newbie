@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Customize! Enjoy Subway</title>
+	<link href="https://fonts.googleapis.com/css?family=Abel|Amatic+SC|Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Abel|Amatic+SC|Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+
+<body>
+	<div class="menu_bar" id="fixed">
+		<a href="{% url 'index' %}">
+			<img id="logo" src="/static/logo.png">
+		</a>
+		<div class="sign">
+			{% if not request.user %}
+			<div class="sign_1">
+				<a href="{% url 'login' %}">
+					<h5 id="white">log in</h5>
+				</a>
+			</div>
+			<div class="sign_1">
+				<a href="{% url 'signup' %}">
+					<h5 id="white">sign up</h5>
+				</a>
+			</div>
+			{% else %}
+			<div class="sign_1">
+				<form method="get">
+				<a href="{% url 'login' %}" name="log_out">
+					<h5 id="white">log out</h5>
+				</a>
+				</form>
+			</div>
+			{% endif %}
+		</div>
+	</div>
+
+	<div id="cover">
+		<div class="cover-content">
+			<b><h1>Let's Customize!</h1></b>
+		</div>
+	</div>
+
+	<form method="post">
+	
+	<div class="product_menu">
+		<h3>Menus</h3>
+		<div class="product">
+			<a><img id="menu" src="/static/menu/menu1.png" width="200px"></a>
+			<h5>Chicken Teriyaki</h5>
+			<input type="radio" name='menu' class="menu" id="Chicken Teriyaki" value="Chicken Teriyaki"> Select</input>
+		</div>
+
+		<div class="product">
+			<a><img id="menu" src="/static/menu/menu2.png" width="200px"></a>
+			<h5>B.L.T</h5>
+			<input type="radio" name='menu' class="menu" id="B.L.T" value="B.L.T"> Select</input>
+		</div>
+
+		<div class="product">
+			<a><img id="menu" src="/static/menu/menu3.png" width="200px"></a>
+			<h5>Spicy Italian</h5>
+			<input type="radio" name='menu' class="menu" id="Spicy Italian" value="Spicy Italian"> Select</input>
+		</div>
+
+		<div class="product">
+			<a><img id="menu" src="/static/menu/menu4.png" width="200px"></a>
+			<h5>Egg Mayo</h5>
+			<input type="radio" name='menu' class="menu" id="Egg Mayo" value="Egg Mayo"> Select</input>
+		</div>
+
+		<div class="product">
+			<a><img id="menu" src="/static/menu/menu5.png" width="200px"></a>
+			<h5>Meat Ball</h5>
+			<input type="radio" name='menu' class="menu" id="Meat Ball" value="Meat Ball"> Select</input>
+		</div>
+
+		<div class="product">
+			<a><img id="menu" src="/static/menu/menu6.png" width="200px"></a>
+			<h5>Vegi</h5>
+			<input type="radio" name='menu' class="menu" id="Vegi" value="Vegi"> Select</input>
+		</div>
+
+		<div class="product">
+			<a><img id="menu" src="/static/menu/menu7.png" width="200px"></a>
+			<h5>Italian B.M.T</h5>
+			<input type="radio" name='menu' class="menu" id="Italian B.M.T" value="Italian B.M.T"> Select</input>
+		</div>
+
+		<div class="product">
+			<a><img id="menu" src="/static/menu/menu8.png" width="200px"></a>
+			<h5>Steak & Cheese</h5>
+			<input type="radio" name='menu' class="menu" id="Steak & Cheese" value="Steak & Cheese"> Select</input>
+		</div>
+
+		<div class="product">
+			<a><img id="menu" src="/static/menu/menu9.png" width="200px"></a>
+			<h5>Turkey Bacon</h5>
+			<input type="radio" name='menu' class="menu" id="Turkey Bacon" value="Turkey Bacon"> Select</input>
+		</div>
+	</div>
+
+	<div class="products">
+		<h3>Bread</h3>
+		<div class="product">
+			<a><img id="menu" src="/static/menu/bread1.png" width="200px"></a>
+			<h5>Parmesan Oregano</h5>
+			<input type="radio" name='bread' class="bread" value="Parmesan Oregano"> Select</input>
+		</div>
+
+		<div class="product">
+			<a><img id="menu" src="/static/menu/bread2.png" width="200px"></a>
+			<h5>Flat</h5>
+			<input type="radio" name='bread' class="bread" value="Flat"> Select</input>
+		</div>
+
+		<div class="product">
+			<a><img id="menu" src="/static/menu/bread3.png" width="200px"></a>
+			<h5>Honey Oat</h5>
+			<input type="radio" name='bread' class="bread" value="Honey Oat"> Select</input>
+		</div>
+
+		<div class="product">
+			<a><img id="menu" src="/static/menu/bread4.png" width="200px"></a>
+			<h5>White</h5>
+			<input type="radio" name='bread' class="bread" value="White"> Select</input>
+		</div>
+
+		<div class="product">
+			<a><img id="menu" src="/static/menu/bread5.png" width="200px"></a>
+			<h5>Wheat</h5>
+			<input type="radio" name='bread' class="bread" value="Wheat"> Select</input>
+		</div>
+
+		<div class="product">
+			<a><img id="menu" src="/static/menu/bread6.png" width="200px"></a>
+			<h5>Hearty Italian</h5>
+			<input type="radio" name='bread' class="bread" value="Hearty Italian"> Select</input>
+		</div>
+	</div>
+
+
+	<div class="products">
+		<h3>Vegitables</h3>
+		<br>
+		<div class="select_all_btn">
+			<input type="checkbox" id="All" onclick="toggle(this)"/> Select All</input>
+		</div>
+
+		<div class="product">
+			<a><img id="menu" src="/static/menu/vegi1.png" width="200px"></a>
+			<h5>Olives</h5>
+			<input type="checkbox" id="Olives" name="foo"> Select</input>
+		</div>
+
+		<div class="product">
+			<a><img id="menu" src="/static/menu/vegi2.png" width="200px"></a>
+			<h5>Peppers</h5>
+			<input type="checkbox" id="Peppers" name="foo"> Select</input>
+		</div>
+
+		<div class="product">
+			<a><img id="menu" src="/static/menu/vegi3.png" width="200px"></a>
+			<h5>Lettuce</h5>
+			<input type="checkbox" id="Lettuce" name="foo"> Select</input>
+		</div>
+
+		<div class="product">
+			<a><img id="menu" src="/static/menu/vegi4.png" width="200px"></a>
+			<h5>Tomatoes</h5>
+			<input type="checkbox" id="Tomatoes" name="foo"> Select</input>
+		</div>
+
+		<div class="product">
+			<a><img id="menu" src="/static/menu/vegi5.png" width="200px"></a>
+			<h5>Red Onions</h5>
+			<input type="checkbox" id="Red Onions" name="foo"> Select</input>
+		</div>
+
+		<div class="product">
+			<a><img id="menu" src="/static/menu/vegi6.png" width="200px"></a>
+			<h5>Cucumbers</h5>
+			<input type="checkbox" id="Cucumbers" name="foo"> Select</input>
+		</div>
+
+		<div class="product">
+			<a><img id="menu" src="/static/menu/vegi7.png" width="200px"></a>
+			<h5>Jalapenos</h5>
+			<input type="checkbox" id="Jalapenos" name="foo"> Select</input>
+		</div>
+
+		<div class="product">
+			<a><img id="menu" src="/static/menu/vegi8.png" width="200px"></a>
+			<h5>Pickles</h5>
+			<input type="checkbox" id="Pickles" name="foo"> Select</input>
+		</div>
+	</div>
+
+	<div class="products">
+		<h3>Sauces</h3>
+		<div class="product">
+			<a><img id="menu" src="/static/menu/sauce1.png" width="200px"></a>
+			<h5>BBQ</h5>
+			<input type="checkbox" id="BBQ"> Select</input>
+		</div>
+
+		<div class="product">
+			<a><img id="menu" src="/static/menu/sauce2.png" width="200px"></a>
+			<h5>Chipotle</h5>
+			<input type="checkbox" id="Chipotle"> Select</input>
+		</div>
+
+		<div class="product">
+			<a><img id="menu" src="/static/menu/sauce3.png" width="200px"></a>
+			<h5>Honey Mustard</h5>
+			<input type="checkbox" id="Honey Mustard"> Select</input>
+		</div>
+
+		<div class="product">
+			<a><img id="menu" src="/static/menu/sauce4.png" width="200px"></a>
+			<h5>Marinara</h5>
+			<input type="checkbox" id="Marinara"> Select</input>
+		</div>
+
+		<div class="product">
+			<a><img id="menu" src="/static/menu/sauce5.png" width="200px"></a>
+			<h5>Sweet Onion</h5>
+			<input type="checkbox" id="Sweet Onion"> Select</input>
+		</div>
+
+		<div class="product">
+			<a><img id="menu" src="/static/menu/sauce6.png" width="200px"></a>
+			<h5>Sweet Chilli</h5>
+			<input type="checkbox" id="Sweet Chilli"> Select</input>
+		</div>
+
+		<div class="product">
+			<a><img id="menu" src="/static/menu/sauce7.png" width="200px"></a>
+			<h5>Ranch</h5>
+			<input type="checkbox" id="Ranch"> Select</input>
+		</div>
+
+		<div class="product">
+			<a><img id="menu" src="/static/menu/sauce8.png" width="200px"></a>
+			<h5>Mayo</h5>
+			<input type="checkbox" id="Mayo"> Select</input>
+		</div>
+
+		<div class="product">
+			<a><img id="menu" src="/static/menu/sauce9.png" width="200px"></a>
+			<h5>Thousand Island</h5>
+			<input type="checkbox" id="Thousand Island"> Select</input>
+		</div>
+
+		<div class="product">
+			<a><img id="menu" src="/static/menu/sauce10.png" width="200px"></a>
+			<h5>Tomato</h5>
+			<input type="checkbox" id="Tomato"> Select</input>
+		</div>
+
+		<div class="product">
+			<a><img id="menu" src="/static/menu/sauce11.png" width="200px"></a>
+			<h5>Hot Chilli</h5>
+			<input type="checkbox" id="Hot Chilli"> Select</input>
+		</div>
+
+		<div class="product">
+			<a><img id="menu" src="/static/menu/sauce12.png" width="200px"></a>
+			<h5>Tomato Relish</h5>
+			<input type="checkbox" id="Tomato Relish"> Select</input>
+		</div>
+	</div>
+
+	<div class="button">
+		<a href="{% url 'order' %}?name=" id="orderbtn">
+		<button type="submit" class="btn btn-default">ORDER</button>
+		</a>
+	</form>
+		<a href="{% url 'index' %}">
+		<button type="submit" class="btn btn-default">CANCEL</button>
+		</a>
+	</div>
+
+	<br>
+	<br>
+
+	<script src="/static/custom.js"></script>
+</body>
+</html>

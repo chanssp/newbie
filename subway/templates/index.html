@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Enjoy Subway</title>
+	<link href="https://fonts.googleapis.com/css?family=Amatic+SC|Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+
+<body id="bg_img">
+	<div class="menu_bar">
+		<a href="{% url 'index' %}">
+			<img id="logo" src="/static/logo.png">
+		</a>
+		<div class="sign">
+			{% if not request.user %}
+			<div class="sign_1">
+				<a href="{% url 'login' %}">
+					<h5 id="white">log in</h5>
+				</a>
+			</div>
+			<div class="sign_1">
+				<a href="{% url 'signup' %}">
+					<h5 id="white">sign up</h5>
+				</a>
+			</div>
+			{% else %}
+			<div class="sign_1">
+				<a href="{% url 'logout' %}">
+					<h5 id="white">log out</h5>
+				</a>
+			</div>
+			{% endif %}
+		</div>
+	</div>
+
+<!-- 	{% if logged_in %}
+		<h1>logged in</h1>
+	{% else %}
+		<h1>logged out</h1>
+	{% endif %} -->
+
+		<!--slideshow of pictures-->
+		<div class="slideshow-container">
+		  <div class="mySlides">
+		    <img src="/static/slide1.png" style="width:100%">
+		  </div>
+
+		  <div class="mySlides">
+		    <img src="/static/slide2.png" style="width:100%">
+		  </div>
+
+		  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+		</div>
+		
+		<br>
+
+		<div style="text-align:center">
+		  <span class="dot" onclick="currentSlide(1)"></span> 
+		  <span class="dot" onclick="currentSlide(2)"></span> 
+		</div>
+		<!--end of slideshow code-->
+
+		<br>
+
+		<div class="button">
+			{% if not request.user %}
+				<a href="{% url 'login' %}">
+			{% else %}
+				<a href="{% url 'custom' %}">
+			{% endif %}
+			<button type="submit" class="btn btn-default">CUSTOMIZE</button>
+			</a>
+		</div>
+		
+		<br>
+		<br>
+	</div>
+
+
+	<script src="/static/script.js"></script>
+</body>
+
+</html>

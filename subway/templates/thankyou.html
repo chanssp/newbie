@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html id="bg_img">
+<head>
+	<title>Thank you for ordering Subway!</title>
+	<link href="https://fonts.googleapis.com/css?family=Amatic+SC|Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body id="bg_img">
+	<div class="menu_bar">
+		<a href="{% url 'index' %}">
+			<img id="logo" src="/static/logo.png">
+		</a>
+		<div class="sign">
+			{% if not request.user %}
+			<div class="sign_1">
+				<a href="{% url 'login' %}">
+					<h5 id="white">log in</h5>
+				</a>
+			</div>
+			<div class="sign_1">
+				<a href="{% url 'signup' %}">
+					<h5 id="white">sign up</h5>
+				</a>
+			</div>
+			{% else %}
+			<div class="sign_1">
+				<form method="get">
+				<a href="{% url 'login' %}" name="log_out">
+					<h5 id="white">log out</h5>
+				</a>
+				</form>
+			</div>
+			{% endif %}
+		</div>
+	</div>
+
+	<div class="input">
+		<center><h5 id="white">Thank you for ordering Subway!</h5>
+		<br>
+		<a href="{% url 'index' %}">
+		<button type="submit" class="btn btn-default">Go to Home</button></center>
+		</a>
+	</div>
+
+</body>
+</html>

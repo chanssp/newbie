@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html id="bg_img">
+<head>
+	<title>Sign Up! Enjoy Subway </title>
+	<link href="https://fonts.googleapis.com/css?family=Amatic+SC|Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body id="bg_img">
+	<div class="menu_bar">
+		<a href="{% url 'index' %}">
+			<img id="logo" src="/static/logo.png">
+		</a>
+		<div class="sign">
+			<div class="sign_1">
+				<a href="{% url 'login' %}">
+					<h5 id="white">log in</h5>
+				</a>
+			</div>
+			<div class="sign_1">
+				<a href="{% url 'signup' %}">
+					<h5 id="white">sign up</h5>
+				</a>
+			</div>
+		</div>
+	</div>
+
+	{% if error %}
+	<center><h5 id="error">{{error}}</h5></center>
+	{% endif %}
+	
+	<div class="input" id="signup">
+		<form method="post">
+		{% csrf_token %}
+		<h5 id="white"> Input Username </h5>
+		<input type="text" placeholder="Username" class="input_text" name="username">
+		<h5 id="white"> Input Password </h5>
+		<input type="text" placeholder="Password" class="input_text" name="password1">
+		<h5 id="white"> Confirm Password </h5>
+		<input type="text" placeholder="Confirm Password" class="input_text" name="password2">
+		<h5 id="white"> Address </h5>
+		<input type="text" placeholder="Address" class="input_text" name="address">
+		<br>
+		<br>
+		<div class="button">
+			<a href="{% url 'index' %}">
+			<button type="submit" class="btn btn-default">Sign Up</button>
+			</a>
+		</div>
+		</form>
+	</div>
+
+</body>
+</html>
