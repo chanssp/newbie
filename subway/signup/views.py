@@ -6,9 +6,11 @@ from django.http import HttpResponseRedirect
 # logged_in = False
 
 def index (request):
-	# del request.user
+	logged_in = False
+	if request.session.get('user_id'):
+		logged_in = True
 
-	return render (request, 'index.html')
+	return render (request, 'index.html', {'logged': logged_in})
 
 def signup (request):
 	from .models import MyUser
@@ -67,8 +69,7 @@ def login(request):
 
 
 def logout(request):
-	# del request.session['user_id']
-	del request.session
+	del request.session['user_id']
 
 	return render (request, 'login.html')
 
@@ -76,22 +77,35 @@ def logout(request):
 def order (request):
 	from .models import Type
 
+	logged_in = False
+	if request.session.get('user_id'):
+		logged_in = True
+
+	current_url = request.resolver_match.url_name
 	# price = Type.filter()
 
-	return render (request, 'order.html')
+	return render (request, 'order.html', {'logged': logged_in})
 
 def custom (request):
 	from .models import Order
 	from .form import OrderForm
 
+	logged_in = False
+	if request.session.get('user_id'):
+		logged_in = True
+
 	if request.method == 'POST':
 		form = OrderForm(request.POST)
-
-		return render (request, 'custom.html')
+		return render (request, 'custom.html', {'logged': logged_in})
 	
-	return render (request, 'custom.html')
+	return render (request, 'custom.html', {'logged': logged_in})
 
 def thank (request):
-	return render (request, 'thankyou.html')
+
+	logged_in = False
+	if request.session.get('user_id'):
+		logged_in = True
+
+	return render (request, 'thankyou.html', {'logged': logged_in})
 
 

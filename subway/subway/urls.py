@@ -26,7 +26,7 @@ urlpatterns = [
     url(r'^signup$', signup, name='signup'),
     url(r'^logout$', logout, name='logout'),
     url(r'^order$', order, name='order'),
-    # url(r'^order/?'),
+    # url(r'^order/?', order, name='order'),
     url(r'^custom$', custom, name='custom'),
     url(r'^thank$', thank, name='thank')
 ]

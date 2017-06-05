@@ -13,7 +13,7 @@
 			<img id="logo" src="/static/logo.png">
 		</a>
 		<div class="sign">
-			{% if not request.user %}
+			{% if not logged %}
 			<div class="sign_1">
 				<a href="{% url 'login' %}">
 					<h5 id="white">log in</h5>
@@ -65,7 +65,7 @@
 		<br>
 
 		<div class="button">
-			{% if not request.user %}
+			{% if not logged %}
 				<a href="{% url 'login' %}">
 			{% else %}
 				<a href="{% url 'custom' %}">

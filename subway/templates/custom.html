@@ -14,7 +14,7 @@
 			<img id="logo" src="/static/logo.png">
 		</a>
 		<div class="sign">
-			{% if not request.user %}
+			{% if not logged %}
 			<div class="sign_1">
 				<a href="{% url 'login' %}">
 					<h5 id="white">log in</h5>
@@ -44,7 +44,7 @@
 	</div>
 
 	<form method="post">
-	
+
 	<div class="product_menu">
 		<h3>Menus</h3>
 		<div class="product">
